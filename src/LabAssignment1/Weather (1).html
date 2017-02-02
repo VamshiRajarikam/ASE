@@ -1,0 +1,68 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" ng-app="weather">
+    <head>
+<title>Weather</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <style>
+        
+     .weatherModule {
+  background: #f2f2f2;
+  height: 150px;
+  width: 250px;
+  border: 1px;
+  padding: 1em;
+         border-radius: 8px;
+}
+
+
+        </style>
+        <nav class="navbar navbar-default" style="background-color: Grey; text-align: center">
+<div class="container-fluid">
+   <div class="navbar-header">
+       <a  class="navbar-brand" href="User_Page.html" aria-dropeffect="move"><font color="#191970"><big>Profile</big></font></a>
+ </div>
+     <ul class="nav nav-tabs nav-justified">
+         <li><a href="Google_Directions.html"><font color="#191970"><br><big><b>GET DIRECTIONS</b></big><br/></font></a></li>
+       <li><a href="Weather.html"><font color="#191970"><br><big><b>CHECK WEATHER</b></big><br/></font></a></li>
+         <li><a href="Login_Page.html"><font color="#191970"><br><big><b>LOGOUT</b></big><br/></font></a></li>
+     </ul>
+   </div>
+ </nav>
+    </head>
+    
+    <body>
+        <div ng-controller="myctrl" align="center">
+  <button id="btn" class = "btn btn-primary" ng-click="getWeather()" align="center"> Show Weather </button>
+  <br/>
+  <br/>
+  <div class="weatherModule" ng-model="currentIcon">
+    <div class="currentConditions" ng-bind ="currentweather"></div>
+    <img src = "{{currentIcon}}"></img>
+  </div>
+</div>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="application/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+var app = angular.module('weather', [])
+   .controller('myctrl', function($scope, $http) {
+       $scope.getWeather = function () {
+           $http.get('https://api.wunderground.com/api/34b87bdda6a1f74b/conditions/q/MO/Kansas%20City.json').success(function (data) {
+               console.log(data);
+               temp = data.current_observation.temp_f;
+               icon = data.current_observation.icon_url;
+               weather = data.current_observation.weather;
+               console.log(temp);
+               $scope.currentweather = "Currently " + temp + " &deg; F and " + weather ;
+               $scope.currentIcon = icon;
+               })
+
+           }
+
+       });
+        </script>
+    </body>
+</html>
