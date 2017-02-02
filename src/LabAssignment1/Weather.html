@@ -3,11 +3,13 @@
     <head>
 <title>Weather</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <style>
-        
+            #body {font-family: "Raleway", Arial, sans-serif}
+            .w3-row img {margin-bottom: -8px}
      .weatherModule {
   background: #f2f2f2;
   height: 150px;
@@ -17,23 +19,22 @@
          border-radius: 8px;
 }
 
-
         </style>
         <nav class="navbar navbar-default" style="background-color: Grey; text-align: center">
 <div class="container-fluid">
    <div class="navbar-header">
-       <a  class="navbar-brand" href="User_Page.html" aria-dropeffect="move"><font color="#191970"><big>Profile</big></font></a>
+       <a  class="w3-left w3-btn w3-white" href="User_Page.html" aria-dropeffect="move"><big>Home</big></font></a>
  </div>
      <ul class="nav nav-tabs nav-justified">
-         <li><a href="Google_Directions.html"><font color="#191970"><br><big><b>GET DIRECTIONS</b></big><br/></font></a></li>
-       <li><a href="Weather.html"><font color="#191970"><br><big><b>CHECK WEATHER</b></big><br/></font></a></li>
-         <li><a href="Login_Page.html"><font color="#191970"><br><big><b>LOGOUT</b></big><br/></font></a></li>
+         <li><a href="Navigation.html" class="w3-btn w3-section"><br><big><b>Navigation</b></big><br/></font></a></li>
+       <li><a href="Weather.html" class="w3-btn w3-section"><br><big><b>Weather</b></big><br/></font></a></li>
+         <li><a href="Login_Page.html" class="w3-btn w3-section"><br><big><b>Logout</b></big><br/></font></a></li>
      </ul>
    </div>
  </nav>
     </head>
-    
-    <body>
+
+    <body background="3.jpg">
         <div ng-controller="myctrl" align="center">
   <button id="btn" class = "btn btn-primary" ng-click="getWeather()" align="center"> Show Weather </button>
   <br/>

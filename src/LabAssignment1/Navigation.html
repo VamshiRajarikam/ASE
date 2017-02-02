@@ -6,6 +6,8 @@
     <title>Get Directions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="application/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK0mPHwPN5VnPblnp6Yzl3PCBLYpgF4gs&v=3.exp&sensor=true"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -16,6 +18,8 @@
 	#head {
 	color: #535358
 	}
+    #body {font-family: "Raleway", Arial, sans-serif}
+    .w3-row img {margin-bottom: -8px}
     #map {
     width: 1000px;
     height: 600px;
@@ -25,17 +29,17 @@
     <nav class="navbar navbar-default" style="align-content: center; text-align-all: center;">
 	<div class="container-fluid" style="align-content: center; text-align-all: center;", align="center">
     <div class="navbar-header">
-    <a  class="nav nav-tabs nav-justified" href="User_Page.html"><font color="#191970"><big>Home</big></font></a>
+    <a  class="w3-left w3-btn w3-white" href="User_Page.html"><big>Home</big></font></a>
 	</div>
      <ul class="nav nav-tabs nav-justified" style="align-content: center; text-align-all: center;">
-         <li><a href="Maps.html"><font color="#191970"><br><big><b>My Location</b></big><br/></font></a></li>
-         <li><a href="Weather.html"><font color="#191970"><br><big><b>Weather</b></big><br/></font></a></li>
-         <li><a href="Login_Page.html"><font color="#191970"><br><big><b>Logout</b></big><br/></font></a></li>
+         <li><a href="Maps.html" class="w3-left w3-btn w3-white"><br><big><b>My Location</b></big><br/></font></a></li>
+         <li><a href="Weather.html" class="w3-left w3-btn w3-white"><br><big><b>Weather</b></big><br/></font></a></li>
+         <li><a href="Login_Page.html" class="w3-left w3-btn w3-white"><br><big><b>Logout</b></big><br/></font></a></li>
      </ul>
 	</div>
 	</nav>
     </head>
-    <body>
+<body background="3.jpg">
     <div ng-app="directions" class="map" ng-controller="getdirection" align="center">
         <form class = "navbar-form" align = "center">
         <div class="row" align="center">
@@ -49,7 +53,7 @@
                 <input type="text" ng-model = "endlocation" id = "endlocation" class="form-control" placeholder="" aria-describedby="basic-addon2">
             </div>
             <br/><br/>
-		<input align="center" type="button" value="Submit" class="btn btn-success" ng-click="routes()" id="btn"><br/>
+		<input align="center" type="button" value="Get Direction" class="btn btn-success" ng-click="routes()" id="btn"><br/>
         </div>
         </form>
         <div id="map" align="center"></div>

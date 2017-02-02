@@ -3,47 +3,55 @@
     <head>
        <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign Up Here</title>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="application/javascript"></script>
+    <title>Sign Up Here</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="application/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <nav class="navbar navbar-default" style="background-color: Grey; align-content: center; text-align-all: center; ">
 
-     <ul class="nav nav-tabs nav-justified">
-         <li><a href="Login_Page.html"><font color="#191970"><br><big><b>LOGIN</b></big></br></font></a></li>
-         <li><a href="Register.html"><font color="#191970"><br><big><b>REGISTER</b></big></br></font></a></li>
+     <ul class="nav nav-tabs ">
+         <li><a href="index.html" class="w3-left w3-btn w3-white"><br><big><b>Home</b></big></br></font></a></li>
+         <li><a href="Login_Page.html" class="w3-left w3-btn w3-white"><br><big><b>Login</b></big></br></font></a></li>
+         <li><a href="Register.html" class="w3-left w3-btn w3-white"><br><big><b>Registration</b></big></br></font></a></li>
      </ul>
    </div>
         </nav>
     </head>
-    <body>
+    <style>
+        #body {font-family: "Raleway", Arial, sans-serif}
+        .w3-row img {margin-bottom: -8px}
+    </style>
+    <body background="3.jpg">
     <div id="login" class="sign-up"  ng-controller="myCtrl" align="justify">
-        <u> <p align="center"><b>Register Here</b></p></u>
+        <u> <p align="center"><b>Registration</b></p></u>
         <form ng-app=""  name="myform" align="center" class = "navbar-form">
 
     <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">__Username__</span>
-        <input type="text" ng-model = "user.name" class="form-control" placeholder="Example: Sachin" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">Username</span>
+        <input type="text" ng-model = "user.name" class="form-control" placeholder="" aria-describedby="basic-addon1">
     </div>
             <br/><br/>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon2">Email Address</span>
-                <input type="email" ng-model = "user.email" class="form-control" placeholder="Ex: Sachin@gmail.com" aria-describedby="basic-addon2">
+                <input type="email" ng-model = "user.email" class="form-control" placeholder="" aria-describedby="basic-addon2">
                 <span ng-show = "myform.myAddress.$error.email"></span>
             </div>
             <br/><br/>
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon3">__Password__  </span>
+                <span class="input-group-addon" id="basic-addon3">Password</span>
                 <input type="password" ng-model = "user.pwd" class="form-control" placeholder="Minimum of 8 Characters" aria-describedby="basic-addon3">
                 <span ng-show = "myform.myAddress.$error.email"></span>
             </div>
             
             <br/><br/>
-    <input class="btn btn-primary" type="submit" ng-click="reg(user.name,user.email,user.pwd)" value="Register">
-            <input class="btn btn-danger" type="reset" value="Clear">
+    <input class="w3-btn w3-section" type="submit" ng-click="reg(user.name,user.email,user.pwd)" value="Register" >
+            <i class="fa fa-paper-plane"></i>
+            <!input class="btn btn-danger" type="reset" value="Clear">
      </form>
         
         </div>
