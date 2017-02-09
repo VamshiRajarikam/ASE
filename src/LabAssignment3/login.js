@@ -33,7 +33,7 @@ window.fbAsyncInit = function()
         version: 'v2.8' // use version 2.2
     });
     FB.Event.subscribe('auth.login', function () {
-        window.location = "http://localhost:63342/Ase_lab3-master/Sourcecode/Ase_lab3/Views/Home.html?_ijt=t8pcc6s1r6el590gnkb8j1etl7";
+        window.location = "http://localhost:63342/ReviewSentiment/app/index.html?_ijt=2nk3nd319mkehn8p845r858vu2";
     });
 
     FB.getLoginStatus(function(response) {
