@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="count=1">
+
+    <p>Input something in the input box:</p>
+    <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+    <h1>Hello {{name}}</h1>
+    <p> Date of birth: <input type="text" ng-model="date" placeholder="Enter your DOB" </p>
+    <p>Hello {{name}} your dob is{{date}}</p>
+    <p>first name is <span ng-bind="firstname"></span></p>
+
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
+
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl', function($scope){
+        $scope.firstname="Vamshi";
+        $scope.lastname="Rajarikam";
+    });
+</script>
+</body>
+</html>
