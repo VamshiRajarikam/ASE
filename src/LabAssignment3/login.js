@@ -27,7 +27,7 @@ FB.getLoginStatus(function(response) {
 window.fbAsyncInit = function()
 {
     FB.init({
-        appId: '1947919255487599',
+        appId: '395039187517503',
         cookie: true, // enable cookies to allow the server to access // the session
         xfbml: true, // parse social plugins on this page
         version: 'v2.8' // use version 2.2
@@ -62,6 +62,9 @@ function testAPI()
         document.getElementById('status').innerHTML ='Thanks for logging in, ' + response.name + '!';
     });
 }
+
+
+//authentication using yelp.com
 function cb(data) {
     console.log("cb: " + JSON.stringify(data));
 }
@@ -124,5 +127,10 @@ $.ajax({
             console.log('error[' + errorThrown + '], status[' + textStatus + '], jqXHR[' + JSON.stringify(jqXHR) + ']');
         }
     );
-
-</script>
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
