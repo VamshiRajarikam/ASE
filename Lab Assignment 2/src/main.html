@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello!</title>
+    <link rel="stylesheet" href="styling.css">
+    <style>
+        .button
+        {  background-color: black;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size :32px;
+            margin: 5px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.5s;
+        }
+        .button:hover
+        {  background-color: white;
+            border-radius: 50%;
+            color: purple;
+        }
+        div
+        {   width: 700px;
+            border:5px red ;
+            font-family: "Times New Roman";
+            padding: 30px;
+            margin: 30px;
+            border-radius: 8px;
+        }
+        .fb-login-button
+        {
+            padding: 95px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<center></br></br></br></br></br></br></br></br>
+    <h1>Welcome</h1>
+    <button class="button" style="vertical-align:middle"><a class="button" href="login.html"><b>LOGIN </b></a></button>
+    <button class="button" style="vertical-align:middle"><a class="button" href="register.html"><b>REGISTER</b></a></button></br>
+    <script>
+        var accessToken;
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            if (response.status === 'connected') {
+                accessToken = response.authResponse.accessToken;
+                console.log('access token caught:' + accessToken);
+                testAPI();
+            } else if (response.status === 'not_authorized') {
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+            } else {
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into Facebook.';
+            }
+        }
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1859912370952098',
+                cookie     : true,  // enable cookies to allow the server to access
+                                    // the session
+                xfbml      : true,  // parse social plugins on this page
+                version    : 'v2.7' // use graph api version 2.5
+            });
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+            });
+        }
+    </script>
+
+
+    <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
+
+    <div id="status">
+    </div>
+</center>
+</body>
+</html>
