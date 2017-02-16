@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo;
+package com.example.vamshirajarikam.FindMyFood;
 
 /**
  * Created by vamshirajarikam on 2/15/17.

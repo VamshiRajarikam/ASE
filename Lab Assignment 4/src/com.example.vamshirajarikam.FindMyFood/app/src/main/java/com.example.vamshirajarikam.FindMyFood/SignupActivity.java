@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo;
+package com.example.vamshirajarikam.FindMyFood;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

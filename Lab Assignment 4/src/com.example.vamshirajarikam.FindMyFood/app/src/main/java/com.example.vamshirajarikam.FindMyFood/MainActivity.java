@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo;
+package com.example.vamshirajarikam.FindMyFood;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
