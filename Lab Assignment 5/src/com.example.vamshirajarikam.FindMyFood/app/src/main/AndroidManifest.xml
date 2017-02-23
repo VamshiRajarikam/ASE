@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vamshirajarikam.FindMyFood" >
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Find My Food"
+        android:theme="@style/AppTheme" >
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyA3jkK96R1ZiibbQWlK7A9E0EOdl3LK43I"/>
+        <activity
+            android:name="com.example.vamshirajarikam.FindMyFood.MainActivity"
+            android:label="Find My Food"
+            android:icon="@drawable/icon">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.vamshirajarikam.FindMyFood.LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="com.example.vamshirajarikam.FindMyFood.SignupActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="com.example.vamshirajarikam.FindMyFood.MapsActivity" android:theme="@style/AppTheme.Dark"/>
+    </application>
+
+</manifest>
