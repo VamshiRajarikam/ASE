@@ -1,3 +1,26 @@
-<ion-view style="" class=" " id="page8" title="Offers">
-    <ion-content class="has-header" padding="true"></ion-content>
+<ion-view style="" class=" " id="page8" title="Search">
+    <ion-content class="has-header" padding="true">
+      <body ng-app="app">
+      <ion-pane ng-controller="offersCtrl">
+        <ion-content class="padding">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input type="text" placeholder="Search for Food" ng-model="recognizedText" value="{{recognizedText}}">
+            </label>
+          </div>
+          <div>
+          <button class="ion-search button-small button-assertive" ng-click="speakText()">
+            Search
+          </button>
+          </div>
+          <div>
+          <button class="ion-mic-a button-small button-assertive"ng-click="record()">
+            Voice search
+          </button>
+          </div>
+        </ion-content>
+      </ion-pane>
+      </body>
+    </ion-content>
 </ion-view>

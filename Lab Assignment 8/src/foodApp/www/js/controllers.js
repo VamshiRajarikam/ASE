@@ -179,12 +179,39 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('offersCtrl', function($scope,$rootScope) {
+.controller('offersCtrl', function($scope,$rootScope, $http) {
 
     //We initialise it on all the Main Controllers because, $rootScope.extra has default value false
     // So if you happen to refresh the Offer page, you will get $rootScope.extra = false
     //We need $ionicSideMenuDelegate.canDragContent(true) only on the menu, ie after login page
     $rootScope.extras=true;
+    $scope.data = {
+    speechText: ''
+  };
+  $scope.recognizedText = '';
+
+  $scope.speakText = function() {
+    TTS.speak({
+      text: $scope.data.speechText,
+      locale: 'en-GB',
+      rate: 1.5
+    }, function () {
+      // Do Something after success
+    }, function (reason) {
+      // Handle the error case
+    });
+  };
+
+  $scope.record = function() {
+    var recognition = new SpeechRecognition();
+    recognition.onresult = function(event) {
+      if (event.results.length > 0) {
+        $scope.recognizedText = event.results[0][0].transcript;
+        $scope.$apply()
+      }
+    };
+    recognition.start();
+  };
 })
 
 .controller('indexCtrl', function($scope,$rootScope,sharedUtils,$ionicHistory,$state,$ionicSideMenuDelegate,sharedCartService) {
@@ -400,7 +427,7 @@ angular.module('app.controllers', [])
 
         if(edit_val!=null) {
           //Update  address
-          if(res!=null){ // res ==null  => close 
+          if(res!=null){ // res ==null  => close
             fireBaseData.refUser().child($scope.user_info.uid).child("address").child(edit_val.$id).update({    // set
               nickname: res.nickname,
               address: res.address,

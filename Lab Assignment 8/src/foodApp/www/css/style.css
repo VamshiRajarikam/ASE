@@ -142,7 +142,13 @@ p {
     z-index: 9;
 }
 /* CODE */
-
+.scroll{
+  height= 100%;
+}
+#map{
+  height= 100%;
+  width= 100%;
+}
 .code {
     color: #333;
     font-family: monospace;
