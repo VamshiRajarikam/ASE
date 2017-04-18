@@ -1,0 +1,54 @@
+<html ng-app="demoMongo" ng-controller="MongoRestController" class="h1">
+<head >
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <style>
+        .reg{
+            background-image: url("image2.jpg");
+        }
+    </style></head>
+
+<body class="reg">
+<br>
+<div style="text-align: center;font-size: 30px;color: #F44336;">
+    Student Database
+</div>
+<br>
+        <div class="b1">
+        <form class="contact_form"  ng-submit="insertData()" name="contact_form">
+            <div class="login-card" >
+                <h2 style="text-align: center;color: white">Create student account</h2>
+                <div class="a1"> <input type="text" name="fname" placeholder="First Name" ng-model="formData.fname" required /></div>
+                <br>
+                <div class="a1"> <input type="text"  name="lname" ng-model="formData.lname" placeholder="Last Name" required /></div>
+                <br>
+                <div class="a1"><input type="text" name="email" placeholder="Email" ng-model="formData.email" required/></div>
+                <br>
+                <div class="a1"> <input type="text" name="marks"  ng-model="formData.marks" placeholder="Marks"></div>
+                <br>
+                <div class="a1"> <input type="text" name="grade"  ng-model="formData.grade" placeholder="Grade"></div>
+                <br>
+                <div class="f6"> <input type="submit" class="button" name="Sign In"  value="Add Student" style="color: black"/></div>
+                <div class="f6"> <input style="color: black" type="submit" value="View all students" class="button" onclick="go()"/></div>
+            </div>
+
+        </form>
+            <div class="b3">
+
+        <script>
+            function go() {
+                window.location='Users.html';
+            }
+        </script>
+            </div>
+            </div>
+
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="index_CSS.css" type="text/css">
+</body>
+</html>
